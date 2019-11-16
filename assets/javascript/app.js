@@ -19,7 +19,6 @@ var getBreweries = (searchParam) => {
           var breweryName = $("<h2>");
           var breweryType = $("<h5>");
           var breweryAddress = $("<p>");
-
           var breweryWebsite = $("<a>");
           
           breweryName.text(name);
@@ -27,6 +26,7 @@ var getBreweries = (searchParam) => {
           breweryAddress.text(address);
           breweryWebsite.text(website);
           breweryWebsite.attr('href', website);
+          breweryDiv.addClass("pb-5");
           breweryDiv.append(breweryName, breweryType, breweryAddress, breweryWebsite);
           $('.brew-info').append(breweryDiv);
           console.log(element);
