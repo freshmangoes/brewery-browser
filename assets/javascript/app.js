@@ -55,20 +55,6 @@ var listBreweries = () => {
   getIP();
 }
 
-var pullHTML = (searchParam) => {
-  $.ajax({
-    url: searchParam,
-    method: "GET",
-    dataType: "html",
-    crossDomain: "true",
-    success: (data) => {
-      var result = data;
-      console.log(`DATA: ${result}`);
-    },
-  });
-
-
-}
 var showLocation = (position) => {
   var lat = position.coords.latitude;
   var lon = position.coords.longitude;
@@ -82,9 +68,5 @@ var getLocation = () => {
     console.log("Browser does not support geolocation!");
   }
 }
+
 listBreweries();
-
-
-
-
-
