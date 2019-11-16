@@ -1,6 +1,7 @@
 var getBreweries = (searchParam) => {
   var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + searchParam;
   console.log('queryURL', queryURL);
+  $('.brew-info').empty();
   $.ajax({
     url: queryURL,
     method: "GET",
