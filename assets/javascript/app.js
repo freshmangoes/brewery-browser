@@ -38,3 +38,12 @@ var getBreweries = (searchParam) => {
     }
   });
 }
+
+// event handler for search
+$('.addButton').click( () => {
+  // gets search box input
+  var searchInput = $(".searchBox").val().trim();
+  console.log('searchInput', searchInput);
+  // gets brewery based on searchInput
+  getBreweries(searchInput);
+});
