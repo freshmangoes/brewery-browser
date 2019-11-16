@@ -31,8 +31,8 @@ var getBreweries = (searchParam) => {
           breweryPh.text(`Call: ${phoneNo}`);
           breweryWebsite.attr('href', website);
 
-          breweryDiv.addClass('pb-4');
           breweryDiv.append(breweryName, breweryType, breweryAddress, breweryWebsite, breweryPh);
+          breweryDiv.addClass("pb-5");
           $('.brew-info').append(breweryDiv);
           console.log(element);
           // console.log(`Brewery name: ${element.name}`);
