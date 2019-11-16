@@ -4,60 +4,81 @@
 }
 
 body {
-    text-align: center;
-    background-image: url("beer-bg.png");
+	text-align: center;
+	background-image: url("../images/beer-bg.png");
+}
+
+.container {
+	border: 4px solid #9a5607;
+	margin: 0 auto;
+	margin-top: 40px;
+	width: 60%;
+	background-color: #ffffff;
+}
+
+h1 {
+	font-family: 'Bebas Neue', cursive;
+	font-size: 60px;
+	color: #9a5607;
+	margin-top: 30px;
+}
+
+ h3 {
+	 margin-top: 40px;
+	 font-family: 'NTR', sans-serif;
+	 font-size: 24px;
+ }
+
+.directions {
+	font-family: 'NTR', sans-serif;
+	font-size: 24px;
+	color: #000000;
+}
+
+.addButton {
+	font-family: 'NTR', sans-serif;
+	font-size: 18px;
+	border: 2px solid black;
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 10px;
+	width: 100px;
+	height: 30px;
+	padding-top: 5px;
+	margin-left: 15px;
+
 }
 
 /*style header text*/
-h1 {
-	padding-top: 20px;;
-	height: 80px;
-	font-family: 'Big Shoulders Text', cursive;
-	text-transform: uppercase;
-	font-weight: 700;
-	font-size: 60pt;
-	color: #000000;
-	text-align: center;
+.row {
+	display: inline;
 }
 
-.searchSection {
-	margin-top: 60px;
-	height: 80px;
-	width: 100%;
+
+.brew-info {
+	margin-left: 100px;
+
+	
 }
 
-.directions {
-	font-family: 'Big Shoulders Text', cursive;
-	font-weight: 300;
-	font-size: 30px;
-	color: #000000;
-	text-transform: uppercase;
+.brew-results {
+	margin-top: 40px;
 }
 
 .searchBox {
 	margin-top: 40px;
-	border-style: solid;
-	border-color:  #000000;
+	border: 2px solid #000000;
 	height: 40px;
 	width: 150px;
-	border-width: 2px;
-	text-transform: uppercase;
+	border-radius: 10px;
 }
 
-.resultsSection {
-	margin-top: 100px;
-	background-color: white;
-	text-align: center;
-	width: 100%;
-	min-height: 150px;
-	margin-right: auto;
-	margin-left: auto;
+
+.img-thumbnail {
+	width: 200px;
+	height: 200px;
+	
 }
 
-.subTitle {
-	font-family: 'Big Shoulders Text', cursive;
-	font-weight: 300;
-	font-size: 30px;
-	color: #000000;
-	text-transform: uppercase;
-}
+
+
