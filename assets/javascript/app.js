@@ -28,7 +28,7 @@ var getBreweries = (searchParam) => {
           breweryType.text(type);
           breweryAddress.text(address);
           breweryWebsite.text(website);
-          breweryPh.text(`Call: ${phoneNo}`);
+          breweryPh.text(`${phoneNo}`);
           breweryWebsite.attr('href', website);
 
           breweryDiv.append(breweryName, breweryType, breweryAddress, breweryWebsite, breweryPh);
