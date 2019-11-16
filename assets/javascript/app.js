@@ -5,6 +5,9 @@ var getBreweries = (searchParam) => {
     success: (data) => {
       var list = data;
       console.log("Brewery list:", JSON.stringify(list));
+
+      console.log()
+
     }
   });
 }
