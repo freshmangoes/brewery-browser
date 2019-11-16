@@ -20,7 +20,6 @@ var getBreweries = (searchParam) => {
           var breweryType = $("<h5>");
           var breweryAddress = $("<p>");
           var breweryWebsite = $("<a>");
-
           
           breweryName.text(name);
           breweryType.text(type);
