@@ -79,3 +79,35 @@ var getUserLocation = () => {
     console.log('geolocation not available');
   }
 }
+
+var addUserLocation = () => {
+  var marker = new mapboxgl.Marker().setLngLat([-122, 37]).addTo(map);
+}
+
+var mapThings = (token) => {
+  mapboxgl.accessToken = token;
+  console.log('mapboxgl.accessToken', mapboxgl.accessToken);
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+
+  var geocoder = new MapboxGeocoder({
+    accessToken: token,
+    mapboxgl: mapboxgl,
+    marker: false,
+    placeholder: 'Search for a brewery!',
+  });
+
+  var geolocate = new mapboxgl.GeolocateControl({
+    positionOptions: {
+      enableHighAccuracy: true
+    },
+    trackUserLocation: true
+  });
+
+  map.addControl(geocoder);
+  map.addControl(geolocate);
+}
+
+mapThings(mapBoxKey);
