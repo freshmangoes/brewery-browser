@@ -84,14 +84,20 @@ var addUserLocation = () => {
   var marker = new mapboxgl.Marker().setLngLat([-122, 37]).addTo(map);
 }
 
+// function for drawing map [WIP]
 var mapThings = (token) => {
   mapboxgl.accessToken = token;
   console.log('mapboxgl.accessToken', mapboxgl.accessToken);
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
+    style: 'mapbox://styles/mapbox/streets-v11',
+    zoom: 10,
   });
 
+  // mapbox SDK, necessary for adding markers on the map
+  var mapboxClient = mapboxSdk({accessToken: token})
+
+  // geocoder feature for map, not sure if necessary [WIP]
   var geocoder = new MapboxGeocoder({
     accessToken: token,
     mapboxgl: mapboxgl,
@@ -99,6 +105,28 @@ var mapThings = (token) => {
     placeholder: 'Search for a brewery!',
   });
 
+  mapboxClient.geocoding.forwardGeocode({
+    // query for location, going to have to pass a search in to place marker
+    query: '390 Capistrano Rd, Half Moon Bay, CA',
+    autocomplete: false,
+    // limit to 1 feature so there isn't a map full of markers :P
+    limit: 1,
+  }).send().then((response) => {
+    console.log('response:', response);
+    // if response exists and has a feature on the map
+    if(response && response.body && response.body.features && response.body.features.length) {
+      // feature is first returned element in list - address
+      var feature = response.body.features[0];
+      // center map on feature [WIP]
+      map.center = feature.center;
+      // map zoom on feature [WIP]
+      // map.zoom = 0;
+      // set marker on feature and add it to the map
+      new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+    }
+  });
+
+  // geolocator button
   var geolocate = new mapboxgl.GeolocateControl({
     positionOptions: {
       enableHighAccuracy: true
@@ -106,7 +134,9 @@ var mapThings = (token) => {
     trackUserLocation: true
   });
 
+  // adds geocoder to the map client
   map.addControl(geocoder);
+  // adds geolocator button to map client
   map.addControl(geolocate);
 }
 
