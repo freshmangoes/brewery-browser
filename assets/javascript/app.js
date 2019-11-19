@@ -105,11 +105,11 @@ var userLocation = () => {
 }
 
 // SAFETY FIRST 
-$(document).ready( function() {
+$(document).ready(function () {
   userLocation();
 
   // event handler for search
-  $('.addButton').click( function() {
+  $('.addButton').click(function () {
     // gets search box input
     var searchInput = $(".searchBox").val().trim();
     console.log('searchInput', searchInput);
@@ -117,7 +117,7 @@ $(document).ready( function() {
     getBreweries(searchInput);
   });
 
-  $(document).on("click", ".brewery", function() {
+  $(document).on("click", ".brewery", function () {
     var addressOnClick = $(this).attr('data-address');
     // debug
     console.log('addressOnClick DEBUG::', addressOnClick);
@@ -128,7 +128,7 @@ $(document).ready( function() {
     // takes in an address from a click event 
     var showFeature = (clickSearchQuery) => {
 
-      if(currentMarkers) {
+      if (currentMarkers) {
         currentMarkers.forEach(element => {
           element.remove();
         });
