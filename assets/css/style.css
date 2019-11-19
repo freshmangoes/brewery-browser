@@ -1,93 +1,85 @@
 /*style all elements*/
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	text-align: center;
-	background-image: url("../images/beer-bg.png");
+  text-align: center;
+  background-image: url("../images/beer-bg.png");
 }
 
 .container {
-	border: 4px solid #9a5607;
-	margin: 0 auto;
-	margin-top: 40px;
-	width: 60%;
-	background-color: #ffffff;
+  border: 4px solid #9a5607;
+  margin: 0 auto;
+  margin-top: 40px;
+  width: 60%;
+  background-color: #ffffff;
 }
 
 h1 {
-	font-family: 'Bebas Neue', cursive;
-	font-size: 60px;
-	color: #9a5607;
-	margin-top: 30px;
+  font-family: "Bebas Neue", cursive;
+  font-size: 60px;
+  color: #9a5607;
+  margin-top: 30px;
 }
 
- h3 {
-	 margin-top: 40px;
-	 font-family: 'NTR', sans-serif;
-	 font-size: 24px;
- }
+h3 {
+  margin-top: 40px;
+  font-family: "NTR", sans-serif;
+  font-size: 24px;
+}
 
 .directions {
-	font-family: 'NTR', sans-serif;
-	font-size: 24px;
-	color: #000000;
+  font-family: "NTR", sans-serif;
+  font-size: 24px;
+  color: #000000;
 }
 
 .addButton {
-	font-family: 'NTR', sans-serif;
-	font-size: 18px;
-	border: 2px solid black;
-	background-color: #ffffff;
-	color: #000000;
-	border-radius: 10px;
-	width: 100px;
-	height: 30px;
-	padding-top: 5px;
-	margin-left: 15px;
-
+  font-family: "NTR", sans-serif;
+  font-size: 18px;
+  border: 2px solid black;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  padding-top: 5px;
+  margin-left: 15px;
 }
 
 /*style header text*/
 .row {
-	display: inline;
+  display: inline;
 }
 
-
 .brew-info {
-	font-family: 'NTR', sans-serif;
-	
+  font-family: "NTR", sans-serif;
 }
 
 .brew-info h2 {
-	font-size: 32px;
+  font-size: 32px;
 }
 
-.brew-info h5, p, a {
-	font-size: 18px;
+.brew-info h5,
+p,
+a {
+  font-size: 18px;
 }
 
 .brew-results {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 .searchBox {
-	margin-top: 40px;
-	border: 2px solid #000000;
-	height: 40px;
-	width: 150px;
-	border-radius: 10px;
+  margin-top: 40px;
+  border: 2px solid #000000;
+  height: 40px;
+  width: 150px;
+  border-radius: 10px;
 }
-
 
 .img-thumbnail {
-	width: 200px;
-	height: 200px;
-	
+  width: 200px;
+  height: 200px;
 }
-
-
-
-
-
