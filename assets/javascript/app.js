@@ -151,7 +151,7 @@ $(document).ready( function() {
           var feature = response.body.features[0];
 
           // zoom on marker
-          map.zoom = 14;
+          map.zoom = 20;
           // set marker on feature and add it to the map
           map.flyTo({
             center: feature.geometry.coordinates
