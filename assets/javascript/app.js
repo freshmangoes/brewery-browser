@@ -46,12 +46,11 @@ var getBreweries = (searchParam) => {
           var phoneNo = element.phone;
 
           // jQuery element caching
-          var breweryDiv = $("<div class='brewery'>");
-          breweryDiv.attr("data-address", address);
+          var breweryDiv = $(`<div class='brewery pb-5' data-address='${address}'>`);
           var breweryName = $("<h2>");
           var breweryType = $("<h5>");
           var breweryAddress = $("<p class='breweryAddress'>");
-          var breweryWebsite = $("<a>");
+          var breweryWebsite = $(`<a href="${website}">`);
           var breweryPh = $("<p>");
 
           // adding pertinent info to jQuery elements
@@ -60,11 +59,9 @@ var getBreweries = (searchParam) => {
           breweryAddress.text(address);
           breweryWebsite.text(website);
           breweryPh.text(`${phoneNo}`);
-          breweryWebsite.attr('href', website);
 
           // append info to a container div
           breweryDiv.append(breweryName, breweryType, breweryAddress, breweryWebsite, breweryPh);
-          breweryDiv.addClass("pb-5");
 
           // append container div to search results div
           $('.brew-info').append(breweryDiv);
