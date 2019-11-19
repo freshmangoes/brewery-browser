@@ -17,6 +17,8 @@ var map = new mapboxgl.Map({
   zoom: 10,
 });
 
+var currentMarkers = [];
+
 var getBreweries = (searchParam) => {
   // URL for ajax query
   var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + searchParam;
@@ -125,6 +127,13 @@ $(document).ready( function() {
 
     // takes in an address from a click event 
     var showFeature = (clickSearchQuery) => {
+
+      if(currentMarkers) {
+        currentMarkers.forEach(element => {
+          element.remove();
+        });
+      }
+
       mapboxClient.geocoding.forwardGeocode({
         // query for location, going to have to pass a search in to place marker
         // query: '390 Capistrano Rd, Half Moon Bay, CA',
@@ -147,7 +156,8 @@ $(document).ready( function() {
           map.flyTo({
             center: feature.geometry.coordinates
           })
-          new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+          var marker = new mapboxgl.Marker().setLngLat(feature.center).addTo(map);
+          currentMarkers.push(marker);
         }
       });
     }
