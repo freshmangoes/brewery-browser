@@ -44,7 +44,7 @@ var getBreweries = (searchParam) => {
           var phoneNo = element.phone;
 
           // jQuery element caching
-          var breweryDiv = $("<div class='brewery'");
+          var breweryDiv = $("<div class='brewery'>");
           breweryDiv.attr("data-address", address);
           var breweryName = $("<h2>");
           var breweryType = $("<h5>");
@@ -103,11 +103,11 @@ var userLocation = () => {
 }
 
 // SAFETY FIRST 
-$(document).ready(() => {
+$(document).ready( function() {
   userLocation();
 
   // event handler for search
-  $('.addButton').click(() => {
+  $('.addButton').click( function() {
     // gets search box input
     var searchInput = $(".searchBox").val().trim();
     console.log('searchInput', searchInput);
