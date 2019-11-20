@@ -82,7 +82,7 @@ var getBreweries = searchParam => {
 };
 
 // function for user location
-var userLocation = () => {
+var getUserLocation = () => {
   // geolocator button
   var geolocate = new mapboxgl.GeolocateControl({
     positionOptions: {
@@ -113,7 +113,7 @@ var userLocation = () => {
 
 // SAFETY FIRST
 $(document).ready(function() {
-  userLocation();
+  getUserLocation();
 
   // event handler for search
   $(".addButton").click(function() {
