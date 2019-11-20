@@ -1,3 +1,4 @@
+
 var getBreweries = (searchParam) => {
   // URL for ajax query
   var queryURL = "https://api.openbrewerydb.org/breweries?by_city=" + searchParam;
@@ -21,16 +22,19 @@ var getBreweries = (searchParam) => {
           var type = element.brewery_type;
           var website = element.website_url;
           var phoneNo = element.phone;
-
+      
           // jQuery element caching
-          var breweryDiv = $("<div>");
-          var breweryName = $("<h2>");
-          var breweryType = $("<h5>");
-          var breweryAddress = $("<p>");
-          var breweryWebsite = $("<a>");
-          var breweryPh  = $("<p>");
+
+          var brewCard = $("<div class='card'>");
+          var mapIt = $("<button id='map-it'>")
+          var breweryName = $("<h5 class='card-header'>");
+          var breweryType = $("<h6 class='card-subtitle'>");
+          var breweryAddress = $("<p class='card-text'>");
+          var breweryWebsite = $("<a class='card-link'>");
+          var breweryPh  = $("<p class='card-text'>");
 
           // adding pertinent info to jQuery elements
+          mapIt.text("Map it!");
           breweryName.text(name);
           breweryType.text(type);
           breweryAddress.text(address);
@@ -39,11 +43,16 @@ var getBreweries = (searchParam) => {
           breweryWebsite.attr('href', website);
           
           // append info to a container div
-          breweryDiv.append(breweryName, breweryType, breweryAddress, breweryWebsite, breweryPh);
-          breweryDiv.addClass("pb-5");
+          //breweryDivTitle.append(breweryName);
+          brewCard.append(breweryName, mapIt, breweryType, breweryAddress, breweryPh, breweryWebsite,);
+          //breweryDiv.append(breweryDivTitle, breweryDivBody);
+          brewCard.addClass("pb-5");
           
           // append container div to search results div
-          $('.brew-info').append(breweryDiv);
+          
+          $('.brew-results').append(brewCard);
+
+          
           console.log(element);
           // console.log(`Brewery name: ${element.name}`);
           // console.log(`Brewery type: ${element.brewery_type}`);
@@ -55,7 +64,7 @@ var getBreweries = (searchParam) => {
 }
 
 // event handler for search
-$('.addButton').click( () => {
+$('.search-btn').click( () => {
   // gets search box input
   var searchInput = $(".searchBox").val().trim();
   console.log('searchInput', searchInput);
