@@ -12,7 +12,7 @@ body {
 	margin: 0 auto;
 	margin-top: 40px;
 	width: 60%;
-	height: 625px;
+	padding-bottom: 20px;
 }
 
 .brew-container {
@@ -194,27 +194,69 @@ p {
 	margin-top: 200px;
 }
 
+@media screen and (max-width: 768px) {
+  
+	.brew-container {
+		width: 600px;
+	  }
+
+	.card {
+		width: 100%;
+		margin-bottom: 10px;
+	
+	}
+
+	  .add-brew {
+
+		margin-top: 200px;
+		width: 500px;
+		margin-left: -60px;
+	}
+}
 
 @media screen and (max-width: 600px) {
 
 	.brew-container {
 	  width: 400px;
-	  height: 720px;
+
 	}
-  }
-  
-  @media screen and (max-width: 768px) {
-  
-	/* The body's bg color will be #333 */
-	body {
-	  background-color: #333;
+
+	.card {
+		width: 100%;
 	}
-  
-	/* The wrapper's width will be 600px */
-	.wrapper {
-	  width: 600px;
+
+	.pb-5 {
+		margin-right: 10px;
 	}
-  }
+
+	.add-brew {
+		margin-top: 100px;
+		width: 400px;
+		margin-left: -60px;
+	}
+
+}
+
+@media screen and (max-width: 416px) {
+
+	.brew-container {
+	  width: 300px;
+
+	}
+
+	.card {
+		width: 100%;
+	}
+
+	.add-brew {
+		margin-top: 100px;
+		width: 300px;
+		margin-left: -50px;
+		height: 600px;
+	}
+
+}
+  
 
 
 
