@@ -1,11 +1,11 @@
 /*style all elements*/
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	text-align: center;
-	background-image: url("../images/beer-bg.png");
+  text-align: center;
+  background-image: url("../images/beer-bg.png");
 }
 
 .container {
@@ -37,6 +37,7 @@ h1 {
 	font-size: 24px;
 	color: #000000;
 	margin-top: 25px;
+
 }
 
 .searchBox {
@@ -214,6 +215,7 @@ p {
 	  width: 600px;
 	}
   }
+
 
 
 
