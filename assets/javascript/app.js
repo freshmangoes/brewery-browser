@@ -120,11 +120,14 @@ var getBreweries = searchParam => {
                 var breweryWebsite = $("<a class='card-link'>");
                 var breweryPh = $("<p class='card-text'>");
 
-                breweryName.text(`${snapshot.val().name}`);
-                breweryType.text(`${snapshot.val().type}`);
-                breweryAddress.text(`${snapshot.val().address}`);
-                breweryWebsite.text(`${snapshot.val().website}`);
-                breweryPh.text(`${snapshot.val().phone}`);
+                breweryName.text(snapshot.val().name);
+                breweryType.text(snapshot.val().type);
+                breweryAddress.text(snapshot.val().address);
+                breweryWebsite.text(snapshot.val().website);
+                breweryPh.text(snapshot.val().phone);
+
+                mapIt.text("Map it!");
+                mapIt.attr("data-address", snapshot.val().address);
 
                 brewCard.append(
                   breweryName,
@@ -146,7 +149,6 @@ var getBreweries = searchParam => {
           });
         });
       };
-
       getFirebaseBreweries();
     }
   });
