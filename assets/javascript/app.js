@@ -37,11 +37,13 @@ var currentMarkers = [];
 
 var getBreweries = searchParam => {
   // URL for ajax query
+
   var city = searchParam;
   var queryURL =
     "https://api.openbrewerydb.org/breweries?by_city=" + searchParam;
   console.log("queryURL", queryURL);
   // empties brew-info div (old search results)
+
   $(".brew-results").empty();
   // ajax query
   $.ajax({
@@ -49,6 +51,7 @@ var getBreweries = searchParam => {
     method: "GET",
     success: data => {
       var list = data;
+
       list.forEach(element => {
         // planning type breweries are not yet launched!
         if (element.brewery_type !== "planning") {
