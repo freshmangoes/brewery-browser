@@ -10,3 +10,6 @@ Written in vanilla HTML, CSS, Javascript, and jQuery. Makes use of Firebase, Map
 
 # Instructions
 Clone the repo and open index.html in your web browser!
+
+# Demo
+![Example Gif](./brewery-browser.gif)
