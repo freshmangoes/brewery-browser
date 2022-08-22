@@ -40,7 +40,7 @@ var getBreweries = searchParam => {
 
   var city = searchParam;
   var queryURL =
-    "https://api.openbrewerydb.org/breweries?by_city=" + searchParam;
+    "https://api.openbrewerydb.org/breweries?by_postal=" + searchParam;
   console.log("queryURL", queryURL);
   // empties brew-info div (old search results)
 
