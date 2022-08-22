@@ -2,20 +2,20 @@
   GLOBAL VARIABLES
 */
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCwMmet64yctVBHxeQAehsvzuAG778Mddg",
-  authDomain: "akc-project-1.firebaseapp.com",
-  databaseURL: "https://akc-project-1.firebaseio.com",
-  projectId: "akc-project-1",
-  storageBucket: "akc-project-1.appspot.com",
-  messagingSenderId: "699582870527",
-  appId: "1:699582870527:web:1a77fd19fc3080986fedca",
-  measurementId: "G-VTN9D03XFX"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCwMmet64yctVBHxeQAehsvzuAG778Mddg",
+//   authDomain: "akc-project-1.firebaseapp.com",
+//   databaseURL: "https://akc-project-1.firebaseio.com",
+//   projectId: "akc-project-1",
+//   storageBucket: "akc-project-1.appspot.com",
+//   messagingSenderId: "699582870527",
+//   appId: "1:699582870527:web:1a77fd19fc3080986fedca",
+//   measurementId: "G-VTN9D03XFX"
+// };
 
-firebase.initializeApp(firebaseConfig);
+// firebase.initializeApp(firebaseConfig);
 
-var db = firebase.database();
+// var db = firebase.database();
 
 // mapbox public api key
 var publicToken =
@@ -102,57 +102,57 @@ var getBreweries = searchParam => {
       });
       // iterate through each element from ajax query
 
-      var getFirebaseBreweries = () => {
-        db.ref().once("value", function(snapshot) {
-          console.log("Snapshot:", snapshot);
-          snapshot.forEach(childSnap => {
-            var childKey = childSnap.key;
-            console.log("childKey", childKey);
+      // var getFirebaseBreweries = () => {
+      //   db.ref().once("value", function(snapshot) {
+      //     console.log("Snapshot:", snapshot);
+      //     snapshot.forEach(childSnap => {
+      //       var childKey = childSnap.key;
+      //       console.log("childKey", childKey);
 
-            var childRef = db.ref(childKey);
-            childRef.once("value", function(snapshot) {
-              console.log(snapshot.val().address);
-              var childAddress = snapshot.val().address;
-              if (childAddress.includes(city)) {
-                console.log("contains city");
-                var brewCard = $("<div class='card'>");
-                var mapIt = $("<button id='map-it'>");
-                var breweryName = $("<h5 class='card-header'>");
-                var breweryType = $("<h6 class='card-subtitle'>");
-                var breweryAddress = $("<p class='card-text'>");
-                var breweryWebsite = $("<a class='card-link'>");
-                var breweryPh = $("<p class='card-text'>");
+      //       var childRef = db.ref(childKey);
+      //       childRef.once("value", function(snapshot) {
+      //         console.log(snapshot.val().address);
+      //         var childAddress = snapshot.val().address;
+      //         if (childAddress.includes(city)) {
+      //           console.log("contains city");
+      //           var brewCard = $("<div class='card'>");
+      //           var mapIt = $("<button id='map-it'>");
+      //           var breweryName = $("<h5 class='card-header'>");
+      //           var breweryType = $("<h6 class='card-subtitle'>");
+      //           var breweryAddress = $("<p class='card-text'>");
+      //           var breweryWebsite = $("<a class='card-link'>");
+      //           var breweryPh = $("<p class='card-text'>");
 
-                breweryName.text(snapshot.val().name);
-                breweryType.text(snapshot.val().type);
-                breweryAddress.text(snapshot.val().address);
-                breweryWebsite.text(snapshot.val().website);
-                breweryPh.text(snapshot.val().phone);
+      //           breweryName.text(snapshot.val().name);
+      //           breweryType.text(snapshot.val().type);
+      //           breweryAddress.text(snapshot.val().address);
+      //           breweryWebsite.text(snapshot.val().website);
+      //           breweryPh.text(snapshot.val().phone);
 
-                mapIt.text("Map it!");
-                mapIt.attr("data-address", snapshot.val().address);
+      //           mapIt.text("Map it!");
+      //           mapIt.attr("data-address", snapshot.val().address);
 
-                brewCard.append(
-                  breweryName,
-                  mapIt,
-                  breweryType,
-                  breweryAddress,
-                  breweryPh,
-                  breweryWebsite
-                );
-                //breweryDiv.append(breweryDivTitle, breweryDivBody);
-                brewCard.addClass("pb-5");
+      //           brewCard.append(
+      //             breweryName,
+      //             mapIt,
+      //             breweryType,
+      //             breweryAddress,
+      //             breweryPh,
+      //             breweryWebsite
+      //           );
+      //           //breweryDiv.append(breweryDivTitle, breweryDivBody);
+      //           brewCard.addClass("pb-5");
 
-                // append container div to search results div
-                $(".brew-results").append(brewCard);
-              } else {
-                console.log("doesn't");
-              }
-            });
-          });
-        });
-      };
-      getFirebaseBreweries();
+      //           // append container div to search results div
+      //           $(".brew-results").append(brewCard);
+      //         } else {
+      //           console.log("doesn't");
+      //         }
+      //       });
+      //     });
+      //   });
+      // };
+      // getFirebaseBreweries();
     }
   });
 };
@@ -304,12 +304,12 @@ $(document).ready(function() {
   });
 
   //firebase watcher
-  db.ref().on("child_added", function(snap) {
-    var snapshot = snap.val();
-    console.log(`Name: ${snapshot.name}`);
-    console.log(`Address: ${snapshot.address}`);
-    console.log(`Phone: ${snapshot.phone}`);
-    console.log(`Type: ${snapshot.type}`);
-    console.log(`Website: ${snapshot.website}`);
-  });
+  // db.ref().on("child_added", function(snap) {
+  //   var snapshot = snap.val();
+  //   console.log(`Name: ${snapshot.name}`);
+  //   console.log(`Address: ${snapshot.address}`);
+  //   console.log(`Phone: ${snapshot.phone}`);
+  //   console.log(`Type: ${snapshot.type}`);
+  //   console.log(`Website: ${snapshot.website}`);
+  // });
 });

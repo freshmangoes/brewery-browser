@@ -75,16 +75,6 @@ h1 {
 	
 }
 
-.card {
-	width: 32%;
-	height: 250px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: none;
-	border-radius: 20px;
-	font-family: 'NTR', sans-serif;
-	
-}
 
 #map-it {
 	width: 70px;
@@ -97,20 +87,39 @@ h1 {
 	font-family: 'NTR', sans-serif;
 	border-radius: 10px;
 	text-transform: uppercase;
+	
+}
 
+.card {
+	display: flex;
+	flex-direction: column;
+
+	width: 32%;
+	height: 300px;
+
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: none;
+	border-radius: 20px;
+	font-family: 'NTR', sans-serif;
+	
 }
 
 .card-header {
+	/* display: flex;
+	flex-direction: column; */
+	overflow: auto;
+
 	background-color: #9a5607;
 	color: #ffffff;
 	font-size: 20px;
-	min-height: 60px;
+	min-height: 100px;
 	border-radius: 20px;
 	text-transform: uppercase;
 	font-family: 'NTR', sans-serif;
 	font-weight: bolder;
 	padding-top: 15px;
-	
+	overflow: hidden;
 }
 
 .card-subtitle {
