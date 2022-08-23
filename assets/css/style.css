@@ -91,11 +91,13 @@ h1 {
 }
 
 .card {
+	overflow: hidden;
+
 	display: flex;
 	flex-direction: column;
 
 	width: 32%;
-	height: 300px;
+	height: auto;
 
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -108,7 +110,7 @@ h1 {
 .card-header {
 	/* display: flex;
 	flex-direction: column; */
-	overflow: auto;
+	overflow: hidden;
 
 	background-color: #9a5607;
 	color: #ffffff;
